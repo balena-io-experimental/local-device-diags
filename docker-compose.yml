@@ -1,0 +1,19 @@
+version: '2'
+volumes:
+  resin-data:
+services:
+  device-check:
+    build:
+      context: ./device-check
+      dockerfile: Dockerfile
+    network_mode: host
+    volumes:
+      - 'resin-data:/data'
+      - '${SSH_AUTH_SOCK}:/ssh-agent'
+    restart: 'no'
+    environment:
+      - 'REGISTRY_ENDPOINT=https://registry2.balena-cloud.com'
+      - 'API_ENDPOINT=https://api.balena-cloud.com'
+      - 'SSH_AUTH_SOCK=/ssh-agent'
+    privileged: true
+    network_mode: host

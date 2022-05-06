@@ -1,0 +1,14 @@
+{
+  "name": "docker-dnssd",
+  "version": "1.0.0",
+  "description": "A container based mdns resolver",
+  "main": "mdns-resolve.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dnssd": "^0.4.1"
+  }
+}
